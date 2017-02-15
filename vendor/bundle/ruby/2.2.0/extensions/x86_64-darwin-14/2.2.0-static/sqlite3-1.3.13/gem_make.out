@@ -1,4 +1,4 @@
-/Users/Jordanforbes1/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20170213-65399-wnnni0.rb extconf.rb 
+/Users/Jordanforbes1/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20170215-11191-1ot8wiq.rb extconf.rb 
 checking for sqlite3.h... yes
 checking for pthread_create() in -lpthread... yes
 checking for sqlite3_libversion_number() in -lsqlite3... yes
@@ -27,4 +27,4 @@ linking shared-object sqlite3/sqlite3_native.bundle
 ld: warning: directory not found for option '-L/Users/haven/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 sqlite3_native.bundle ./.gem.20170213-65399-1q44uri/sqlite3
+/usr/bin/install -m 0755 sqlite3_native.bundle ./.gem.20170215-11191-bu0leh/sqlite3

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
+	has_one :profile
 	has_many :posts
-	has_many :comments, through: :posts
+	has_many :rooms
 end
 
 class Post < ActiveRecord::Base
@@ -8,7 +9,11 @@ class Post < ActiveRecord::Base
 	has_many :comments
 end
 
-class Comment < ActiveRecord::Base
+
+class Profile < ActiveRecord::Base
 	belongs_to :user
-	belongs_to :post
+end
+
+class Room <ActiveRecord::Base
+	has_many :user
 end
