@@ -14,6 +14,11 @@ class Profile < ActiveRecord::Base
 	belongs_to :user
 end
 
-class Room <ActiveRecord::Base
-	has_many :user
+class Room < ActiveRecord::Base
+	has_many :users
+end
+
+class Joinroomuser < ActiveRecord::Base
+	has_many :users
+	has_many :rooms
 end
