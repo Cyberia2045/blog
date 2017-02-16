@@ -1,6 +1,6 @@
 require "sinatra"
 require "sinatra/activerecord"
-require "sinatra-flash"
+require "sinatra/flash"
 #require "faker"
 require "./models"
 
@@ -67,12 +67,18 @@ end
 
 post "/sessions/new" do
 	user = User.where(email: params[:email]).first
-	
 	session[:user_id] = user.id
+	flash[:notice] = "You've successfully signed in"
 
 	redirect "/"
 end
 
+get "/sign-out" do
+	session.clear
+	flash[:notice] = "You've successfully signed out"
+
+	redirect "/"
+end
 
 
 
