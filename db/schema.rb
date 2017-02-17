@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215163100) do
+ActiveRecord::Schema.define(version: 20170216034941) do
+
+  create_table "joinroomuser", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "room_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -35,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170215163100) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
+    t.string   "password"
     t.datetime "birthday"
   end
 

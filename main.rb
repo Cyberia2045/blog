@@ -21,11 +21,33 @@ get "/" do
 	
 end
 
+post '/users' do
+	user = User.new
+
+	user.email = params["email"]
+	user.password = params["password"]
+
+	user.save
+
+	session[:user_id] = @user.id
+	p user.id
+	flash[:notice] = "You've successfully signed in"
+
+	redirect "/"
+end
+
+get "/users/:id" do
+	@user = User.find(params[:id])
+
+	erb :user_show
+end
+
 post '/posts' do
 	post = Post.new
 
 	post.title = params["title"]
 	post.body = params["body"]
+	post.user_id = session[:user_id]
 
 	post.save
 
@@ -66,12 +88,22 @@ get "/sign_in" do
 	erb :sign_in
 end
 
+get "/sign_up" do
+	erb :sign_up
+end
+
 post "/sessions/new" do
 	user = User.where(email: params[:email]).first
-	session[:user_id] = user.id
-	flash[:notice] = "You've successfully signed in"
+	if user && user.password == params[:password]
+		session[:user_id] = user.id
+		flash[:notice] = "You've successfully signed in"
 
-	redirect "/"
+
+		redirect "/"
+	else
+		redirect back
+		#flash.now[:badpassword] = "Why don't you try that again?"
+	end
 
 end
 

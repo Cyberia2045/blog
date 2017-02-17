@@ -1,0 +1,28 @@
+<!--title-->
+	<form action="/posts" method="post">
+		<label for="title">Title</label>
+		<input type="text" name="title" id="title" />
+	<br />
+	
+<!--body-->
+	<br />
+		<label for="body">Body</label>
+		<input type="text" name="body" id="body" style="height:200px; 
+		width:300px" maxlength="140" align="top"/>	
+		<button type="submit">Submit</button>
+	</form>
+
+<h1>All My Posts</h1>
+<% @posts.each do |post| %>
+	<%if post.user_id == session[:user_id] %>
+	<li>
+		<a href="/posts/<%= post.id %>"> <%= post.title %> </a>
+		| <%=post.body%>
+		| <a href="/posts/edit/<%=post.id %>">Edit</a> 
+		| <%=post.user_id%>
+		| <%=post.created_at%>
+		| <a href="/posts/delete/<%= post.id %>">delete</a>
+	</li>
+	<% end %>
+<% end %>
+<br />
