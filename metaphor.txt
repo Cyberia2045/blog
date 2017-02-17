@@ -1,0 +1,25 @@
+models	
+
+User	(has_many :posts) (has_many :comments, through :posts)
+———
+id
+first_name
+
+Post	(belongs_to :user)
+——-
+id
+user_id
+title
+body
+
+Comment	
+————
+id 
+body
+post_id
+
+an id is like a name tag or a collar. If you see an object with someone’s name written on it it means it belongs to that person, but a person can also wear their own name tag in order do show who they are. A comment with a post_id on it means that the comment belongs to the post.
+
+The User in this situation is a big ceo. The ceo has many businesses, or Posts. These businesses have many workers, or Comments. These workers work for the CEO but not directly, they work for him due to the fact that the CEO owns the businesses that they work for. 
+
+or the Post is a dog owned by the User, and the Post finds a ball. Technically the User owns that ball but it’s only because the dog found it. 
