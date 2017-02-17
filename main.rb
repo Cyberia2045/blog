@@ -18,6 +18,7 @@ get "/" do
 	p session[:visited]
 
 	erb :index
+	
 end
 
 post '/posts' do
@@ -71,6 +72,7 @@ post "/sessions/new" do
 	flash[:notice] = "You've successfully signed in"
 
 	redirect "/"
+
 end
 
 get "/sign-out" do

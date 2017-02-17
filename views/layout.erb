@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel= "stylesheet" type="text/css" href="stylesheets/bootstrap.css">
+
+	<title>"fooob"</title>
+</head>
+<body>
+<div class="container">
+<h1>hi</h1>
+<%= User.find(session[:user_id]).email if session[:user_id]%>
+
+<% if session[:user_id] then%> 
+	<a href="/sign-out">Log Out</a>
+<%else%>
+	<a href="/sign_in">Log In</a> 
+<%end%>
+<%= yield %>
+</div>
+</body>
+</html>
