@@ -1,7 +1,6 @@
 require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
-#require "faker"
 require "./models"
 
 
@@ -34,10 +33,8 @@ post '/users' do
 		session[:user_id] = user.id
 		flash[:notice] = "You've successfully signed in"
 
-
 		redirect "/"
 	end
-
 
 end
 
