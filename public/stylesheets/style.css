@@ -1,0 +1,66 @@
+body {
+	font-family: "Raleway";
+	background: url("/images/night.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color:white;
+}
+
+/*---------posts styling-------------*/
+
+.container {
+	width:90%;
+	margin:0 auto;
+	text-align: center;
+}
+
+#body {
+	margin: 0 auto;
+	background-color: rgba(192,192,192,0.7);
+	color:white;
+	font-size: 1.6rem;
+	width:85%;
+	height:50%;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#title,
+#email,
+#password {
+	background-color: rgba(192,192,192,0.7);
+	color:white;
+	font-size: 1.4rem;
+	width:40%;
+	height:25px;
+	border-radius: 10px;
+	padding:10px;
+}
+
+button {
+	width:75px;
+	border-radius: 15px;
+	margin:10px;
+}
+
+a {
+	color:white;
+	font-weight:bolder;
+}
+
+a:active {
+	color:steelblue;
+}
+
+.mockery {
+	width:300px;
+	text-align: center;
+	margin: 0 auto;
+	padding:10px;
+}
+
+.post_feed {
+	width:300px;
+	margin: 0 auto;
+	text-align: center;
+}

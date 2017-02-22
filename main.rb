@@ -1,7 +1,6 @@
 require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
-#require "faker"
 require "./models"
 
 
@@ -29,11 +28,14 @@ post '/users' do
 
 	user.save
 
-	session[:user_id] = @user.id
-	p user.id
-	flash[:notice] = "You've successfully signed in"
+	user = User.where(email: params[:email]).first
+	if user && user.password == params[:password]
+		session[:user_id] = user.id
+		flash[:notice] = "You've successfully signed in"
 
-	redirect "/"
+
+		redirect "/"
+	end
 end
 
 get "/users/:id" do

@@ -1,3 +1,5 @@
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
 <!--title-->
 	<form action="/posts" method="post">
 		<label for="title">Title</label>
@@ -6,13 +8,12 @@
 	
 <!--body-->
 	<br />
-		<label for="body">Body</label>
-		<input type="text" name="body" id="body" style="height:200px; 
-		width:300px" maxlength="140" align="top"/>	
+		<label for="body">The Post</label>
+		<input type="text" name="body" id="body" align="top"/>	
 		<button type="submit">Submit</button>
 	</form>
 
-<h1>All My Posts</h1>
+<h1 class="post_feed">All My Posts</h1>
 <% @posts.each do |post| %>
 	<%if post.user_id == session[:user_id] %>
 	<li>
