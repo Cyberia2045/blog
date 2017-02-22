@@ -1,11 +1,11 @@
 
-	<h1 class="mockery">Twitter: A Mockery</h1>
+	<h1 class="mockery">Twitter but it Sucks</h1>
 
-	|<%= User.find(session[:user_id]).email if session[:user_id]%>
+	<%= User.find(session[:user_id]).email if session[:user_id]%>
 
 	<% if session[:user_id] then%> 
 		|<a href="/sign-out">Log Out</a>|
 	<%else%>
 		<a href="/sign_up">Sign Up</a>
-		|<a href="/sign_in">Log In</a> 
+		| <a href="/sign_in">Log In</a> 
 	<%end%>

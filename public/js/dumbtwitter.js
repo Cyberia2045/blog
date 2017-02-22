@@ -19,11 +19,11 @@ function stop(){
 		}
 	counter()
 
-	$("input").focus()
+	$("textarea").focus()
 }
 
 $(document).ready(function(){
-	$("input").keyup(function(){
+	$("textarea").keyup(function(){
 		count()
 		stop()
 		
