@@ -9,9 +9,11 @@
 <!--body-->
 	<br />
 		<label for="body">The Post</label>
-		<input type="text" name="body" id="body" align="top"/>	
+		<textarea type="text" name="body" id="body" maxlength="140"> </textarea>	
 		<button type="submit">Submit</button>
 	</form>
+
+<p class="char_remain"></p>
 
 <h1 class="post_feed">All My Posts</h1>
 <% @posts.each do |post| %>
