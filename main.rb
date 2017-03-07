@@ -83,7 +83,7 @@ post "/posts/edit/:id" do
 
 	@post.save
 
-	redirect "/posts/#{@post.id}"
+	redirect "/"
 end
 
 get "/sign_in" do
