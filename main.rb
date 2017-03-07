@@ -33,9 +33,9 @@ post '/users' do
 		session[:user_id] = user.id
 		flash[:notice] = "You've successfully signed in"
 
-
 		redirect "/"
 	end
+
 end
 
 get "/users/:id" do
