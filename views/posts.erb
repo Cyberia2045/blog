@@ -9,13 +9,12 @@
 <!--body-->
 	<br />
 		<label for="body">The Post</label>
-		<textarea rows="5" cols="50" type="text" name="body" id="body"></textarea>
+		<textarea type="text" name="body" id="body" maxlength="140"> </textarea>
 		<button type="submit">Submit</button>
-		<div class="textcount">
-		
-			<p>0</p>
-		</div>
 	</form>
+
+<p class="char_remain"></p>
+
 <h1 class="post_feed">All My Posts</h1>
 <% @posts.each do |post| %>
 	<%if post.user_id == session[:user_id] %>
