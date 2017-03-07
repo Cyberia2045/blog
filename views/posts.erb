@@ -8,8 +8,7 @@
 	
 <!--body-->
 	<br />
-		<label for="body">The Post</label>
-		<textarea type="text" name="body" id="body" maxlength="140"> </textarea>
+		<textarea type="text" name="body" id="body" maxlength="140" placeholder="Make a Post"> </textarea>
 		<button type="submit">Submit</button>
 	</form>
 
@@ -18,14 +17,14 @@
 <h1 class="post_feed">All My Posts</h1>
 <% @posts.each do |post| %>
 	<%if post.user_id == session[:user_id] %>
-	<li>
+
 		<a href="/posts/<%= post.id %>"> <%= post.title %> </a>
 		| <%=post.body%>
 		| <a href="/posts/edit/<%=post.id %>">Edit</a> 
 		| <%=post.user_id%>
 		| <%=post.created_at%>
 		| <a href="/posts/delete/<%= post.id %>">delete</a>
-	</li>
+
 	<% end %>
 <% end %>
 <br />
